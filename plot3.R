@@ -4,7 +4,7 @@ datafile<-read.table("household_power_consumption.txt",header=TRUE,sep=";")
 datafile$Date<-as.Date(datafile$Date, format = "%d/%m/%Y")
 get.rows   <- datafile$Date >= as.Date("2007-02-01") & datafile$Date <= as.Date("2007-02-02")
 data <- datafile[get.rows, ]
-png(filename="plot3.png") 
+png(filename="plot3.png",width = 480, height = 480, units = "px") 
 plot(as.POSIXct(paste(data$Date, data$Time)),as.numeric(as.character(data$Sub_metering_1)),type='l',xlab="",ylab="Energy sub metering")
 lines(as.POSIXct(paste(data$Date, data$Time)),as.numeric(as.character(data$Sub_metering_2)),type='l',col="red")
 lines(as.POSIXct(paste(data$Date, data$Time)),as.numeric(as.character(data$Sub_metering_3)),type='l',col="blue")

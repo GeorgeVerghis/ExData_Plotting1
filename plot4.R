@@ -1,6 +1,6 @@
 #######  Assignment 4 ######################################
 setwd("/Users/georgeverghis/desktop/Coursera")
-png(filename="plot4.png") 
+png(filename="plot4.png",width = 480, height = 480, units = "px") 
 par(mfrow=c(2,2), mar = c(4,4,3,1))
 datafile<-read.table("household_power_consumption.txt",header=TRUE,sep=";")
 datafile$Date<-as.Date(datafile$Date, format = "%d/%m/%Y")
